@@ -1,0 +1,80 @@
+Theme Settings
+
+Header
+Make Sticky on scroll
+Shrink on scroll (make smaller)
+Unstick Topbar (bar above logo, hide it if header is now sticky)
+
+Header - Extra Elements
+Social Icons Should we display them? if so, where? give options
+Phone number / small amount of text (show field to enter information if yes). Provide options left and right in top bar
+
+Header - Mobile Navigation
+Enable for tablet as well as mobile phones if you want too.
+Hide sub-nav items by default - you need to click parent to see them
+
+----------------------------------
+Sidebar Settings
+Control where the sidebar appears on different pages.
+
+Archive Pages
+Blog pages
+Single Post Entries
+Pages
+
+Options
+left, right, none
+
+------------------------------------
+Footer
+Number of columns - change width of columns using classes depending on this setting
+Display widgets & bottom bar, or just one or the other
+Copyright notice field - enter your message
+Display social icons?
+
+General
+Analytics tracking code (placed at the top of the page)
+FavIcon
+--------------------------------------
+
+Blog Options
+
+Layout
+- Choose from a set of predefined layouts, or create your own following documentation and have it appear here. I suggest 4 predefined options.
+
+Single Post Options
+- Select from one of three predefined templates
+
+
+Related Posts
+- Two or three predefined display options or disable compeletely
+
+
+Blog Meta Elements
+
+Show or hide typical meta information on single post pages. Checkboxes for the following:
+
+- Blog post author
+- Comment Count
+- Post category
+- Post Date
+- Allowed HTNL tags in commnets
+- Post Tags
+
+
+Share Post Social Links
+- Facebook
+- Twitter
+- Pinterest
+- Google+
+- Reddit
+- Linkedin
+- Tumblr
+- VK
+- Email
+- Any others
+
+
+DEMO IMPORT
+
+ - It would be great to have a few demo content / setups that could be imported by the user so they can see how things work.

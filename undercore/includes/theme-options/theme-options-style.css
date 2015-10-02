@@ -1,0 +1,88 @@
+/*
+	THIS IS TEMP CSS. IT SHOULD BE USING A GRID
+*/
+
+.undercore-options_wrap {
+	width: 780px;
+	margin-top: 20px;
+	background-color: white;
+	border-radius:5px 5px 0 0;
+}
+
+.undercore-options_wrap * {
+	box-sizing: border-box;
+}
+
+.undercore-options_wrap:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.undercore-options__header {
+	padding: 1em;
+	border-bottom: 1px solid #eee;
+}
+
+.undercore-options__sidebar,
+.undercore-options__main,
+.undercore-option-control {
+	float: left;
+}
+.undercore-option-description {
+	float: right;
+	width: 260px;
+	margin-right: 20px;
+}
+.undercore-option-description p {
+	font-size: 11px;
+	margin-top: 0;
+}
+
+.undercore-options__main {
+	width: 620px;
+	border-left: 1px solid #eee;
+}
+
+.undercore-options__sidebar {
+	width: 160px;
+
+}
+
+.undercore-options__tab {
+	height: 40px;
+	width: 100%;
+	padding: 10px;
+	border-bottom: 1px solid #eee;
+	cursor: pointer;
+}
+
+
+.undercore-option-wrap {
+	padding: 0 0 18px 20px;
+	border-bottom: 1px solid #eee;
+	overflow: hidden;
+}
+.undercore-option-field-wrap {
+	padding-bottom: 1em;
+}
+
+.undercore-option-field-wrap input[type="text"],
+.undercore-option-field-wrap select{
+	width: 250px;
+	height: 30px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+
+.undercore-option-control .media-preview {
+	display: none;
+}
+.undercore-option-control.undercore-media-active .media-preview{
+	display: block;
+}
+.undercore-option-control .undercore-media-delete:after {
+	content: "X";
+}
