@@ -117,4 +117,72 @@ function undercore_get_copyright_notice() {
 	return $copyright;
 }
 
+
+/**
+ * GET BODY CLASSES
+ * Undercore settings require CSS classes be applied to take effect. 
+ * Here we loop through the options, check if they're active and add them to a string that'll output in the header.php file
+ *
+ */
+
+function undercore_get_body_classes() {
+	// @ToDo loop through a globally accessible array instead of querying the db here
+	global $ucore;
+
+	$options = $ucore->fe_options;
+	$bodyClasses;
+
+	foreach($options as $option) {
+		if (trim($option['bodyClass']) && trim($option['value'])) {
+			$bodyClasses .= $option['bodyClass'] . ' ';
+		}
+	}
+	
+	return $bodyClasses;
+}
+
+
+function undercore_get_page_type() {
+	$pageType;
+
+	if (is_archive()) {
+		$pageType = 'archive';
+	}
+	elseif (is_page())  {
+		$pageType = 'page';
+	}
+	elseif (is_single()) {
+		$pageType = 'single';
+	}
+	elseif (is_home()) {
+		$pageType = 'blog';
+	}
+
+	return $pageType;
+}
+
+
+/**
+ * GET SIDEBAR CLASSES
+ * Controls where the content and sidebars appear, if at all. Applied to the outer container of a template
+ * uc-sidebar-right - float sidebar right and content left
+ * uc-sidebar-left - float sidebar left and content right
+ * uc-sidebar-disabled - make the content full width. This option also stop sthe sidebar being compiled
+ * More can be applied i.e. when hiding the footer
+ *
+ */
+function undercore_get_sidebar_class($page_type) {
+
+	global $ucore;
+	$options = $ucore->fe_options;
+	$sidebarClass;
+
+	foreach( $options as $option){
+		if ($option["id"] === "undercore_sidebar_".$page_type && trim($option["value"])) {
+			$sidebarClass = "uc-sidebar-".$option["value"];
+		}
+	}
+
+	return $sidebarClass;
+}
 ?>

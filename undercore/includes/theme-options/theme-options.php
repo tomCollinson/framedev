@@ -122,7 +122,7 @@ function undercore_settings_page() {
 			?>
 		<?php 
 		require( ROOT_PATH. '/undercore/includes/theme-options/panels/general.php' ); 
-		/*require( ROOT_PATH . '/undercore/includes/theme-options/panels/colors.php' ); */ 
+		require( ROOT_PATH . '/undercore/includes/theme-options/panels/sidebars.php' );  
 	    require( ROOT_PATH . '/undercore/includes/theme-options/panels/header.php' );
 	    require( ROOT_PATH . '/undercore/includes/theme-options/panels/social-accounts.php' );
 	    require( ROOT_PATH . '/undercore/includes/theme-options/panels/footer.php' ); ?>

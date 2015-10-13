@@ -1,3 +1,6 @@
+<?php 
+	$bodyClasses = undercore_get_body_classes();
+?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -13,7 +16,7 @@
 	<?php echo undercore_get_favicon(); ?>
 	<?php wp_head(); ?>
 </head>
-<body <?php body_class( $undercore_body_classes ); ?>>
+<body <?php body_class( $bodyClasses ); ?>>
 <header>
 	<div class="top-bar">
 		<?php echo get_option('undercore_header_extra'); ?>

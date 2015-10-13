@@ -133,4 +133,56 @@ $undercore_options[] = array(
 	"bodyClass" => "undercore_header_collapse"
 	);
 
+// Sidebar Options
+
+$sidebarOptions = array(
+	"left" => "Left aligned",
+	"right" => "Right aligned",
+	"disabled" => "Disabled"
+	);
+
+$undercore_options[] = array(
+	"slug" => "sidebars",
+	"name" => __( "Pages Sidebar", "undercore"),
+	"desc" => __( "<p>Choose the poisiton of the sidebar or disable it for pages.</p>","undercore"),
+	"id" => "undercore_sidebar_page",
+	"type" => "select",
+	"std" => "right",
+	"options" => $sidebarOptions
+	);
+$undercore_options[] = array(
+	"slug" => "sidebars",
+	"name" => __( "Blog Page Sidebar", "undercore"),
+	"desc" => __( "<p>Choose the poisiton of the sidebar or disable it for your blog page.</p>","undercore"),
+	"id" => "undercore_sidebar_blog",
+	"type" => "select",
+	"std" => "right",
+	"options" => $sidebarOptions
+	);
+$undercore_options[] = array(
+	"slug" => "sidebars",
+	"name" => __( "Single Posts Sidebar", "undercore"),
+	"desc" => __( "<p>Choose the poisiton of the sidebar or disable it for single posts.</p>","undercore"),
+	"id" => "undercore_sidebar_single",
+	"type" => "select",
+	"std" => "right",
+ 	"options" => $sidebarOptions
+	);
+$undercore_options[] = array(
+	"slug" => "sidebars",
+	"name" => __( "Archive Sidebar", "undercore"),
+	"desc" => __( "<p>Choose the poisiton of the sidebar or disable it for archive pages.</p>","undercore"),
+	"id" => "undercore_sidebar_archive",
+	"type" => "select",
+	"std" => "right",
+	"options" => $sidebarOptions
+	);
+
+
+// Blog Page Options
+/**
+ * @ToDo - Add layout and post style options. For now we can control what is and isn't displayed
+ *
+ */
+
 ?>
