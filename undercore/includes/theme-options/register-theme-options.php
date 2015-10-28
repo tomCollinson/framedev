@@ -179,10 +179,93 @@ $undercore_options[] = array(
 	);
 
 
+/**
+ * Colors
+ * Lets the user control the colors used throughout the theme. Presets can be provided that will populate these options
+ *
+ */
+$undercore_config['color_sets'] = array(
+    'header'      => 'Header',
+    'main'        => 'Main Content',
+    'alternate'   => 'Alternate Content',
+    'footer'      => 'Footer'
+ );
+
+$undercore_colorsets = $undercore_config['color_sets'];
+
+foreach($undercore_colorsets as $key => $value)
+{
+$undercore_options[] = array(
+	"slug" => "styles",
+	"name" => $value ." ". __( "Background Color", "undercore"),
+	"desc" => __( "<p>Main Background Colour</p>","undercore"),
+	"id" => "undercore-" . $key . "-colors_background",
+	"class" => "undercore-color-picker",
+	"type" => "text",
+	"std" => "#ffffff",
+	"group" => $key,
+	"custom_css" => true
+	);
+$undercore_options[] = array(
+	"slug" => "styles",
+	"name" => $value ." ". __( "Primary Color", "undercore"),
+	"desc" => __( "<p>Main Theme Colour</p>","undercore"),
+	"id" => "undercore-" . $key . "-colors_primary",
+	"class" => "undercore-color-picker",
+	"type" => "text",
+	"std" => "#444444",
+	"group" => $key,
+	"custom_css" => true
+	);
+$undercore_options[] = array(
+	"slug" => "styles",
+	"name" => $value ." ". __( "Secondary Color", "undercore"),
+	"desc" => __( "<p>Secondary Theme Colour</p>","undercore"),
+	"id" => "undercore-" . $key . "-colors_secondary",
+	"class" => "undercore-color-picker",
+	"type" => "text",
+	"std" => "#dddddd",
+	"group" => $key,
+	"custom_css" => true
+	);
+$undercore_options[] = array(
+	"slug" => "styles",
+	"name" => $value ." ". __( "Body Text Color", "undercore"),
+	"desc" => __( "<p>Colour of body text</p>","undercore"),
+	"id" => "undercore-" . $key . "-colors_body_text",
+	"class" => "undercore-color-picker",
+	"type" => "text",
+	"std" => "#000000",
+	"group" => $key,
+	"custom_css" => true
+	);
+
+};
+
 // Blog Page Options
 /**
  * @ToDo - Add layout and post style options. For now we can control what is and isn't displayed
  *
  */
+
+$blogOptions = array(
+	"author" => "Post Author",
+	"comment_count" => "Post Comment Count",
+	"category" => "Post Categories",
+	"tags" => "Post Tags",
+	"date" => "Post Published Date",
+	"html_tags" => "Allowed HTML Tags"
+	);
+
+foreach($blogOptions as $key => $val) {
+	$undercore_options[] = array(
+	"slug" => "blog",
+	"name" => __( $val, "undercore"),
+	"desc" => __( "<p>" . $val . "</p>","undercore"),
+	"id" => "undercore_blog_" . $key,
+	"std" => "true",
+	"type" => "checkbox"
+	);
+}
 
 ?>

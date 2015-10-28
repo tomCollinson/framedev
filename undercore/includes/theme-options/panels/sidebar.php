@@ -5,7 +5,7 @@
 
         $sidebarOptions = undercore_section_options('sidebar');
 
-       foreach($generalOptions as $option) {
+       foreach($sidebarOptions as $option) {
 
           echo undercore_html_helper_option($option["type"], $option);
         }

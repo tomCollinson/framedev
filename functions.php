@@ -26,6 +26,11 @@ require_once( 'undercore/undercore.php' );
 
 $template_directory = get_template_directory();
 
+
+
+
+
+
 /*
 	Include all required code
 */

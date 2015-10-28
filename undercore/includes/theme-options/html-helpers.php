@@ -2,7 +2,11 @@
 
 function undercore_html_helper_option($fieldType, $option) {
 	
-	$output = '<div class="undercore-option-wrap">
+	$output = '<div class="undercore-option-wrap';
+     if ($option['class'] === 'undercore-color-picker') { 
+            $output .=" undercore-picker-wrap";
+        };
+    $output .= '">
     	<h4>'. $option['name'] .'</h4>
     	<div class="undercore-option-control ';
 
@@ -10,7 +14,7 @@ function undercore_html_helper_option($fieldType, $option) {
     	$output .= ($option['value'] !== '') ? 'undercore-media-active' :'';
     }	
     
-    $output .= '"><div class="undercore-option-field-wrap '.  $option['id'] .'">';
+    $output .= '"><div class="undercore-option-field-wrap '.  $option['id'] . ' ' . $option['class'] . '">';
 
     if ($fieldType === "upload"){
     	$output .= '<input class="header_logo_url undercore-upload-field media-url" type="text" name="'. $option['id'] .'" size="60" value="'.  $option['value'] .'">
@@ -24,6 +28,10 @@ function undercore_html_helper_option($fieldType, $option) {
 
     if ($fieldType === "text"){
     	$output .= '<input type="text" name="' .  $option['id'] . '" id="' . $option['id'] . '" value="' . $option['value'] . '">';
+
+        if ($option['class'] === 'undercore-color-picker') {
+            $output .= '<div class="undercore-color-preview" style=" background-color:' . $option['value'] . '"></div>';
+        }
     }
     if ($fieldType === "textarea") {
     	$output .= '<textarea name="' . $option['id'] . '"></textarea>';

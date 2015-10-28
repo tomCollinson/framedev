@@ -33,7 +33,7 @@
         },
 
         bind_delete : function(){
-            $('.undercore-media-delete').live('click', function(e){
+            $('.undercore-media-delete').on('click', function(e){
                 e.preventDefault();
                 var container = $(this).closest('.undercore-option-control');
                 container.find('.media-url').val('');

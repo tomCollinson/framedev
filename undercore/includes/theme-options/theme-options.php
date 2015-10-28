@@ -78,14 +78,16 @@ function undercore_section_options($slug) {
 /**
  * Add options stylesheets and CSS
  */
-add_action('admin_head', 'admin_register_head');
+
 
 function admin_register_head() {  
 	$url = get_bloginfo('template_directory') . '/undercore/includes/theme-options/';  
 	wp_enqueue_style( 'theme-options-style', $url . 'theme-options-style.css');
 	wp_enqueue_script('jQuery', $url . 'jquery.js'); // DON'T DO THIS IN PRODUCTION
+	wp_enqueue_script('theme-options-colorpicker', $url . 'colorpicker.js');
 	wp_enqueue_script('theme-options-script', $url . 'theme-options-script.js');
 }
+add_action('admin_enqueue_scripts', 'admin_register_head');
 
 if(function_exists( 'wp_enqueue_media' )){
     wp_enqueue_media();
@@ -101,7 +103,9 @@ if(function_exists( 'wp_enqueue_media' )){
 */
 function undercore_settings_page() {
 ?>
-
+<script>
+	<?php undercore_return_color_schemes() ?>
+</script>
 <div class="undercore-options_wrap">
 <div class="undercore-options__header">
 	<h2><?php _e('Theme Settings', 'undercore'); ?></h2>
@@ -122,10 +126,12 @@ function undercore_settings_page() {
 			?>
 		<?php 
 		require( ROOT_PATH. '/undercore/includes/theme-options/panels/general.php' ); 
+		require( ROOT_PATH . '/undercore/includes/theme-options/panels/styles.php' );
 		require( ROOT_PATH . '/undercore/includes/theme-options/panels/sidebars.php' );  
 	    require( ROOT_PATH . '/undercore/includes/theme-options/panels/header.php' );
 	    require( ROOT_PATH . '/undercore/includes/theme-options/panels/social-accounts.php' );
-	    require( ROOT_PATH . '/undercore/includes/theme-options/panels/footer.php' ); ?>
+	    require( ROOT_PATH . '/undercore/includes/theme-options/panels/footer.php' );
+	    require( ROOT_PATH . '/undercore/includes/theme-options/panels/blog.php' ); ?>
 	  <?php submit_button(); ?>
 	 </form>
 	</div>

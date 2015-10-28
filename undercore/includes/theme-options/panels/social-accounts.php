@@ -17,7 +17,7 @@
 		
 
 		bind_click : function(){
-			$('.undercore-social-account-add').live('click', function(e){
+			$('.undercore-social-account-add').on('click', function(e){
 
 				e.preventDefault();
 
@@ -33,7 +33,7 @@
 
 			});
 
-			$('.undercore-social-remove').live('click',function(e){
+			$('.undercore-social-remove').on('click',function(e){
 				e.preventDefault();
 				var index = $(this).attr('data-id');
 				socialArray.splice(index,1);

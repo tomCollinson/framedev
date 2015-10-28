@@ -185,4 +185,27 @@ function undercore_get_sidebar_class($page_type) {
 
 	return $sidebarClass;
 }
+
+
+// This is a temporary function to simply detect which colours are associated with which area and output
+// some example CSS. It should be updated to use the correct selectors
+function undercore_create_custom_styles() {
+	global $ucore;
+
+	$stylesArray = $ucore->style_options;
+	$selector = "";
+	$output = "";
+
+	foreach($stylesArray as $section) {
+		$selector = $section['section'];
+
+		foreach($section['colors'] as $color_key => $color_val) {
+				$output .= '.' . $selector . "{ color: " . $color_val . "} "; 
+
+		}
+	}
+
+	return $output;
+}
+
 ?>

@@ -19,6 +19,10 @@ if (!class_exists('undercore_super')) {
 
 		var $fe_options;
 
+		var $style_options;
+
+		var $color_schemes;
+
 		public function undercore_super () {
 
 			if(is_admin()){
@@ -28,6 +32,7 @@ if (!class_exists('undercore_super')) {
 				// Build an array of option names/ids and values for the front end
 				$this->frontend_options();
 			}
+			$this->set_styles();
 		}
 
 		/**
@@ -70,6 +75,50 @@ if (!class_exists('undercore_super')) {
 					'bodyClass' => $option['bodyClass']
 					);
 			}
+
+		}
+
+
+		/** 
+		 * Pull out custom CSS options and provide them to be output in
+		 * the head of the front end
+		 */
+		protected function custom_styles() {
+			require( ROOT_PATH . '/undercore/includes/theme-options/register-theme-options.php' );
+
+			$temp_options = $undercore_options;
+
+
+		}
+
+
+		protected function set_styles() {
+			// Get the default styles, then check each for a custom value.
+
+			require( ROOT_PATH . '/undercore/includes/theme-options/default-style-settings.php');
+			$temp_styles = $undercore_styles;
+
+
+			// Loop through our style settings and replace any values that exist in the db
+
+			foreach($temp_styles as &$styles) {
+
+				$style_section = $styles["section"];
+
+				foreach($styles['colors'] as $key => &$val) {
+
+					$option_check = get_option("undercore-" . $style_section . "-colors_" . $key);
+
+					if ($option_check) {
+						$val = $option_check;
+					}
+
+				}
+			}
+
+			// Set to the global object
+			$this->style_options = $temp_styles;
+			$this->color_schemes = $undercore_predefined_styles;
 
 		}
 	

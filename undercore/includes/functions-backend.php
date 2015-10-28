@@ -21,4 +21,9 @@ function undercore_get_footer_columns($default){
 
 }
 
+function undercore_return_color_schemes() {
+     // Output the color schemes as a js object on the theme options panel
+     global $ucore;
+     echo  "var undercore_schemes = " . json_encode($ucore->color_schemes, 128);
+   }
 ?>
