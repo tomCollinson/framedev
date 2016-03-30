@@ -60,18 +60,6 @@ function undercore_echo_tracking_code() {
 /********************************************/
 
 
-function undercore_get_site_logo() {
-	global $undercore_config;
-	$undercore_config['site_logo'] = get_option('undercore_site_logo');
-
-	if ($undercore_config['site_logo'] !== ''){
-		return $undercore_config['site_logo'];
-	} else {
-		return "haha"; // RETURN THEME LOGO, USE GLOBAL VARS FOR PATHS AS YOU SHOULD BE EVERYWHERE BUT AREN'T YET
-	}
-	
-}
-
 /**
  * FAVICON
  * If a favicon has been provided by the user, build the HTML and make it available
@@ -206,6 +194,31 @@ function undercore_create_custom_styles() {
 	}
 
 	return $output;
+}
+
+/**
+ * Get Undercore Option
+ * Pulls out an option value from the global undercore class. The second arguement decides whether
+ * to echo or just return the value
+ **/
+function undercore_get_option($option, $default = "", $echo = false){
+	global $ucore;
+
+	$allOptions = $ucore->fe_options;
+	$optionValue = "";
+	foreach($allOptions as $tempOption) {
+		
+		if ($tempOption["id"] === $option){
+			$optionValue = $tempOption["value"];
+		}
+	}
+
+	if ($echo === true) {
+		echo $optionValue;
+	} else {
+		return $optionValue;
+	}
+
 }
 
 ?>

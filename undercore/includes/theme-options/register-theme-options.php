@@ -184,16 +184,14 @@ $undercore_options[] = array(
  * Lets the user control the colors used throughout the theme. Presets can be provided that will populate these options
  *
  */
-$undercore_config['color_sets'] = array(
+$undercore_config['style_sets'] = array(
     'header'      => 'Header',
     'main'        => 'Main Content',
     'alternate'   => 'Alternate Content',
     'footer'      => 'Footer'
  );
 
-$undercore_colorsets = $undercore_config['color_sets'];
-
-foreach($undercore_colorsets as $key => $value)
+foreach($undercore_config['style_sets'] as $key => $value)
 {
 $undercore_options[] = array(
 	"slug" => "styles",
@@ -263,7 +261,6 @@ foreach($blogOptions as $key => $val) {
 	"name" => __( $val, "undercore"),
 	"desc" => __( "<p>" . $val . "</p>","undercore"),
 	"id" => "undercore_blog_" . $key,
-	"std" => "true",
 	"type" => "checkbox"
 	);
 }

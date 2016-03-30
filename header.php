@@ -15,6 +15,7 @@
 	<!-- Output the FavIcon is one has been defined -->
 	<?php echo undercore_get_favicon(); ?>
 	<?php wp_head(); ?>
+	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 </head>
 <body <?php body_class( $bodyClasses ); ?>>
 <header>
@@ -26,5 +27,9 @@
 			</div>
 		<?php }; ?>
 	</div>
-	<img src="<?php echo undercore_get_site_logo(); ?>">
+	<img src="<?php echo undercore_get_option("undercore_site_logo"); ?>">
+
+	<div class="site-navigation">
+		<?php wp_nav_menu('primary_menu') ?>
+	</div>
 </header>

@@ -28,7 +28,9 @@ $template_directory = get_template_directory();
 
 
 
-
+register_nav_menus( array(
+	'primary_menu' => 'Primary Navigation'
+) );
 
 
 /*

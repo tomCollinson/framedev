@@ -6,6 +6,14 @@
 */
 ?>
 <div class="undercore-options__panel undercore-options__styles" data-id="styles">
+	<div class="undercore-predefined-styles">
+		<?php 
+			global $ucore;
+			foreach($ucore->color_schemes as $key => $val) {
+				echo "Hello";
+			}
+		?>
+	</div>
 	<div class="undercore-tabs">
 		<ul class="undercore-tabs__tabs">
 		    <?php 
@@ -15,7 +23,7 @@
 		    	$i = 0;
 		    	$output = '';
 
-		    	foreach($undercore_config['color_sets'] as $key => $val) {
+		    	foreach($undercore_config['style_sets'] as $key => $val) {
 		    		$i++;
 		    		$output ='<li class="undercore-tabs__tab';
 
@@ -31,7 +39,7 @@
     	<?php
     	$i = 0;
 
-    		foreach($undercore_config['color_sets'] as $key => $val) {
+    		foreach($undercore_config['style_sets'] as $key => $val) {
     			$i++;
     			echo '<div class="undercore-tabs__content';
     			if ($i === 1) {

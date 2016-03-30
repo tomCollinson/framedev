@@ -88,7 +88,6 @@ if (!class_exists('undercore_super')) {
 
 			$temp_options = $undercore_options;
 
-
 		}
 
 
